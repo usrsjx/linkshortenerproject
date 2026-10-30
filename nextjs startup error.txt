@@ -1,0 +1,51 @@
+Error: Route "/": Next.js encountered runtime data during prerendering.
+
+`cookies()`, `headers()`, `params`, or `searchParams` accessed outside of `<Suspense>` prevents the route from being prerendered, blocking the page load and leading to a slower user experience.
+
+Ways to fix this:
+  - [stream] Provide a placeholder with `<Suspense fallback={...}>` around the data access
+  - [block] Set `export const instant = false` to allow a blocking route
+
+Learn more: https://nextjs.org/docs/messages/blocking-prerender-runtime
+    at RootLayout (app\layout.tsx:38:13)
+  36 |           <header className="flex justify-between i...
+  37 |             <span className="font-semibold">Link Sh...
+> 38 |             <Show when="signed-out">
+     |             ^
+  39 |               <SignInButton mode="modal" />
+  40 |               <SignUpButton mode="modal" />
+  41 |             </Show>
+Error: Route "/": Next.js encountered runtime data during prerendering.
+
+`cookies()`, `headers()`, `params`, or `searchParams` accessed outside of `<Suspense>` prevents the route from being prerendered, blocking the page load and leading to a slower user experience.
+
+Ways to fix this:
+  - [stream] Provide a placeholder with `<Suspense fallback={...}>` around the data access
+  - [block] Set `export const instant = false` to allow a blocking route
+
+Learn more: https://nextjs.org/docs/messages/blocking-prerender-runtime
+    at RootLayout (app\layout.tsx:42:13)
+  40 |               <SignUpButton mode="modal" />
+  41 |             </Show>
+> 42 |             <Show when="signed-in">
+     |             ^
+  43 |               <UserButton />
+  44 |             </Show>
+  45 |           </header>
+Error: Route "/": Next.js encountered runtime data during prerendering.
+
+`cookies()`, `headers()`, `params`, or `searchParams` accessed outside of `<Suspense>` prevents the route from being prerendered, blocking the page load and leading to a slower user experience.
+
+Ways to fix this:
+  - [stream] Provide a placeholder with `<Suspense fallback={...}>` around the data access
+  - [block] Set `export const instant = false` to allow a blocking route
+
+Learn more: https://nextjs.org/docs/messages/blocking-prerender-runtime
+    at Home (app\page.tsx:6:41)
+  4 |
+  5 | export default async function Home() {
+> 6 |   const { isAuthenticated } = await auth();
+    |                                         ^
+  7 |   if (isAuthenticated) redirect("/dashboard");
+  8 |
+  9 |   return (
