@@ -58,12 +58,6 @@ export default function Home() {
                   <ArrowRight aria-hidden="true" />
                 </Button>
               </SignUpButton>
-              <a
-                className="inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-medium text-slate-300 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-                href="#features"
-              >
-                Explore the features
-              </a>
             </div>
             <p className="mt-5 text-sm text-slate-500">
               A tidy home for links you want to share.
