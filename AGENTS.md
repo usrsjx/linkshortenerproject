@@ -38,15 +38,6 @@ Before the final response, run one reporting pass. If candidates remain, from th
 - Treat the current routes and database setup as scaffolding, not evidence that link creation, redirects, analytics, or account-level data isolation are already implemented.
 - Additional agent instructions will be maintained in separate Markdown files in the root `docs/` directory. Add focused, topic-specific guidance there rather than expanding this file with lengthy specialized instructions; keep this file as the project-wide entry point and link to relevant docs when they exist. 
 
-## Mandatory `/docs` review before writing code
-
-Before generating, writing, or modifying ANY code, first identify and read every individual instruction file in `/docs` that is relevant to the task. This is a mandatory prerequisite, not an optional reference step: do not start coding until those files have been read. If a task spans multiple topics, read every applicable instruction file (for example, read both [docs/authentication.md](docs/authentication.md) and [docs/ui-components.md](docs/ui-components.md) when both areas are involved). If it is unclear which instructions apply, inspect the files in `/docs` and read the potentially relevant ones before coding. Revisit the instructions if the task scope changes.
-
-## Agent docs
-
-- [docs/authentication.md](docs/authentication.md): Clerk-only authentication, modal sign-in/sign-up, protected `/dashboard`, and homepage redirect for signed-in users.
-- [docs/ui-components.md](docs/ui-components.md): shadcn/ui only for all UI elements; no custom components.
-
 ## Coding conventions
 
 - Keep TypeScript strict. Prefer explicit, narrow types and validate untrusted input at the boundary instead of using `any`, non-null assertions, or unchecked casts.

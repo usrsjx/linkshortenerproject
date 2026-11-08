@@ -16,7 +16,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Configure Clerk and `DATABASE_URL` in your local environment, and apply the Drizzle schema before using the dashboard. Signed-in users can create links from the dashboard by entering an HTTP or HTTPS destination and an optional custom slug. Slugs are case-sensitive, globally unique, at most 64 characters, start with a letter or number, and contain only letters, numbers, hyphens, or underscores. Application routes are reserved. If the slug is left blank, a short path is generated automatically; visiting it redirects to the destination.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

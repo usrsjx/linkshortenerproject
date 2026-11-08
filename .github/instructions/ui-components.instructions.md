@@ -1,3 +1,8 @@
+---
+description: This file describes the UI component guidelines for the project. Read this before implementing or modifying any UI components in this project.
+applyTo: **/*
+---
+
 # UI Components
 
 ## Rules
