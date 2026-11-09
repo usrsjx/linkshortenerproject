@@ -67,7 +67,7 @@ export function CreateLinkDialog() {
         }
       }}
     >
-      <DialogTrigger render={<Button />}>Create link</DialogTrigger>
+      <DialogTrigger render={<Button />}>+ Create link</DialogTrigger>
       <DialogContent showCloseButton={!pending}>
         <DialogHeader>
           <DialogTitle>Create a short link</DialogTitle>
@@ -102,7 +102,7 @@ export function CreateLinkDialog() {
               aria-describedby={message ? "slug-help create-link-message" : "slug-help"}
             />
             <p id="slug-help" className="text-sm text-muted-foreground">
-              Leave blank to generate a slug automatically. Start with a letter or number; use only letters, numbers, hyphens, or underscores.
+              Your short link will use /l/ followed by this slug. Leave blank to generate one automatically. Start with a letter or number; use only letters, numbers, hyphens, or underscores.
             </p>
           </div>
           {message && (

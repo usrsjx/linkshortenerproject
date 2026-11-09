@@ -99,7 +99,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-white/[0.05] px-4 py-3">
                   <span className="font-mono text-sm text-cyan-200">
-                    short.link/guide
+                    short.link/l/guide
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-xs text-emerald-300">
                     <Check aria-hidden="true" className="size-3.5" />

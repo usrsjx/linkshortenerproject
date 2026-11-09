@@ -1,5 +1,6 @@
 import { randomBytes } from "node:crypto";
-import { desc, eq } from "drizzle-orm";
+import { NeonDbError } from "@neondatabase/serverless";
+import { and, desc, eq } from "drizzle-orm";
 import { db } from "@/db";
 import { links } from "@/db/schema";
 
@@ -29,6 +30,35 @@ export async function getLinksByUserId(userId: string) {
     .from(links)
     .where(eq(links.userId, userId))
     .orderBy(desc(links.createdAt));
+}
+
+export async function updateLink(userId: string, id: number, url: string, slug?: string) {
+  try {
+    const updated = await db
+      .update(links)
+      .set({ url, ...(slug === undefined ? {} : { shortCode: slug }) })
+      .where(and(eq(links.id, id), eq(links.userId, userId)))
+      .returning({ id: links.id });
+    return updated.length > 0 ? "updated" : "not-found";
+  } catch (error) {
+    const cause = error instanceof Error ? error.cause : undefined;
+    if (
+      cause instanceof NeonDbError &&
+      cause.code === "23505" &&
+      cause.constraint === "links_short_code_unique"
+    ) {
+      return "slug-taken";
+    }
+    throw error;
+  }
+}
+
+export async function deleteLink(userId: string, id: number) {
+  const deleted = await db
+    .delete(links)
+    .where(and(eq(links.id, id), eq(links.userId, userId)))
+    .returning({ id: links.id });
+  return deleted.length > 0;
 }
 
 export async function getLinkByShortCode(shortCode: string) {
